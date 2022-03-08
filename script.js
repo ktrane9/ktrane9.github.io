@@ -29,7 +29,7 @@ function add_item() {
     var id = lastID;
     var element = document.createElement("li");
     element.id = "item" + id.toString();
-    var input = user_add();
+    var text = user_add();
 
     //Creating Checkbox
     var input = document.createElement("input");
@@ -37,7 +37,7 @@ function add_item() {
     input.id = "box" + id.toString();
     
     element.appendChild(input);
-    element.appendChild(document.createTextNode(" " + input + " "));
+    element.appendChild(document.createTextNode(" " + text + " "));
 
     //Creating Button
     var button = document.createElement("button");
