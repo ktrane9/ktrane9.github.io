@@ -11,32 +11,40 @@ function initial() {
 }
 
 function user_add() {
-    var input = prompt("Please Add and Item to the Checklist");
+    var input = prompt("Please Add an Item to the Checklist");
     if(input != null)
         return input;
 }
 
 function shift(x) {
-    /*Changes item names when removed or added*/
+    /*Increments the given variable every 
+    time it is called, then returns it.*/
     x++;
     return x;
 }
 
 function add_item() {
+
+    //Creating List Element
     var id = lastID;
     var element = document.createElement("li");
     element.id = "item" + id.toString();
     var input = user_add();
-    element.appendChild(document.createTextNode(input + " "));
 
-    var button = document.createElement("button");
-    button.id = id.toString();
-    button.appendChild(document.createTextNode("-"));
-
+    //Creating Checkbox
     var input = document.createElement("input");
     input.id = "box" + id.toString();
     input.type = "checkbox";
 
+    element.appendChild(input);
+    element.appendChild(document.createTextNode(" " + input + " "));
+
+    //Creating Button
+    var button = document.createElement("button");
+    button.id = id.toString();
+    button.appendChild(document.createTextNode("-"));
+
+    //Adding Li Element to the Ul, adding Button to the Li Element
     document.querySelector('ul').appendChild(element);
     document.querySelector("#" + element.id.toString()).appendChild(button);
     button.onclick = function() {delete_item(id)};
@@ -45,11 +53,8 @@ function add_item() {
 }
 
 function delete_item(id) {
-    //document.getElementById("item"+ id.toString()).innerHTML = "";
     var item = document.getElementById("item" + id.toString());
     item.remove();
-    //document.getElementById("item1").innerHTML = id.toString();
-
 }
 
 /*function check(id) {
