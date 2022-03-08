@@ -32,9 +32,8 @@ function add_item() {
     var input = user_add();
 
     //Creating Checkbox
-    var input = document.createElement("input");
+    var input = document.createElement("checkbox");
     input.id = "box" + id.toString();
-    input.type = "checkbox";
 
     element.appendChild(input);
     element.appendChild(document.createTextNode(" " + input + " "));
