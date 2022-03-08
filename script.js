@@ -2,15 +2,13 @@ var givenID = 4;
 var lastID = shift(givenID);
 
 function change() {
+
     alert("The button was changed.");
     document.getElementById('item4').innerHTML = "Change";
 }
 
-function initial() {
-    /*Creates first four items*/
-}
-
 function user_add() {
+
     var input = prompt("Please Add an Item to the Checklist");
     if(input != null)
         return input;
@@ -25,7 +23,7 @@ function shift(x) {
 
 function add_item() {
 
-    //Creating List Element
+    //Creating List Element and Prompting User
     var id = lastID;
     var element = document.createElement("li");
     element.id = "item" + id.toString();
@@ -35,27 +33,46 @@ function add_item() {
     var input = document.createElement("input");
     input.setAttribute("type", "checkbox");
     input.id = "box" + id.toString();
+
+    //Creating Date Box
+    var date = document.createElement("input");
+    date.setAttribute("type", "date");
     
     element.appendChild(input);
     element.appendChild(document.createTextNode(" " + text + " "));
+    element.appendChild(date);
+    element.appendChild(document.createTextNode(" "));
 
-    //Creating Button
+    //Creating and Adding Button
     var button = document.createElement("button");
     button.id = id.toString();
-    button.appendChild(document.createTextNode("-"));
+    button.appendChild(document.createTextNode("Delete"));
+    element.appendChild(button);
 
-    //Adding Li Element to the Ul, adding Button to the Li Element
+    //Creating Break Element
+    var br = document.createElement("br");
+    br.id = "break" + id.toString();
+
+    //Adding Li Element to the Ul, adding <br> to the Ul Element
     document.querySelector('ul').appendChild(element);
-    document.querySelector("#" + element.id.toString()).appendChild(button);
+    document.querySelector('ul').appendChild(br);
+    //document.querySelector("#" + element.id.toString()).appendChild(button);
     button.onclick = function() {delete_item(id)};
 
     lastID = shift(id);
 }
 
 function delete_item(id) {
+
     var item = document.getElementById("item" + id.toString());
+    var br = document.getElementById("break" + id.toString());
     item.remove();
+    br.remove();
 }
+
+/*function initial() {
+    //Creates first four items*
+}*/
 
 /*function check(id) {
     id = id.charAt(3);
