@@ -87,7 +87,7 @@ function add_item() {
     var input = document.createElement("input");
     input.setAttribute("type", "checkbox");
     input.id = "box" + id.toString();
-    input.onclick = function() {play_sound(id)};
+    input.onclick = function() {play_sound(input.id)};
     
 
     //Creating Date Box
