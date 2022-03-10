@@ -65,7 +65,6 @@ function shift(x) {
 }
 
 function play_sound(id) {
-
     var i = search(id);
 
     if(check_array[i].value == false) {
