@@ -4,63 +4,177 @@
         <!-- Meta Tags For Mobile Device -->
         <meta charset = "utf-8">
         <meta name = "viewport" content = "width=device-width, initial-scale=1">
-        <!--On Mobile the Page is not Centered, 
-        The Text in the Title is not Centered
-        To Do List Box is bigger than what you can view on screen
-        Add Item Button is too far away-->
 
         <!-- Bootstrap CSS -->
         <link href = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel = "stylesheet" integrity = "sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin = "anonymous">
+        <link rel = "icon" href = "src/K Logo Squared.png">
 
-        <title>My To-Do List</title>
+        <title>Ktrane's Webpage</title>
 
     </head>
     <style>
+        @font-face { font-family: Midorima; src: url('src/Midorima-PersonalUse-Regular.ttf'); } 
+
         body{
-            background-color:#E7CCFF;
+            background-color:#334038;
         }
 
         .box{
-            /*width: 638px;
-            /*width: 60.784%;*/
-            /*width: 50%;*/
-            max-width: 638px;
-            height: 700px;
+            max-width: 1100px;
+            height: auto;
             padding: 10px;
-            margin-top: 100px; /*perfect*/
+            margin-top: auto;
+            margin-bottom: auto;
             margin-left: auto;
             margin-right: auto;
-            /*margin-left: 250px; /*perfect right not needed*/
             /*1275px is the max width on my screen*/
-            border: 10px solid #DC55F3;
-            border-radius: 30px;
+            border: 10px solid #00260f;
+            border-radius: 5px;
             /*outline: 10px solid #3E0E8C;*/
-            border-left: 10px solid #3E0E8C;
-            border-bottom: 10px solid #3E0E8C;
-            background-color: #6C39BF;
+            border-left: 3px solid #bfffd8;
+            border-top: 3px solid #bfffd8;
+            background-image: linear-gradient(#36e479, #11823c, #268864);
+            /*background-color: #83113d;*/
             box-sizing: border-box;
         }
 
-        .list-name{
-            width: 225px;
-            height: 45px;
-            line-height: 45px;
-            text-align: center;
-            font-size: 30px;
-            margin-top: 20px;
-            margin-left: 40px;
-            margin-bottom: 20px;
-            border: 2px solid #FFFFFF;
-            border-radius: 30px;
-            background-color: #FFFFFF;
+        .title{
+            max-width: 700px;
+            height: 140px;
+            /*line-height: 45px;*/
+            
+            /*margin-top: 120px;*/
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 70px;
+            border: 5px solid #00260f;
+            /*border-radius: 30px;*/
+            background-color: #318c54;
             box-sizing: border-box;
             
         }
 
-        .text{
-            color: #FFFFFF;
-            /*margin-left: 20px;*/
+        .tit_text{
+            text-align: center;
+            /*font-size: 80px; /*80px, 6.26vw*/
+            object-fit: scale-down;
+            font-family: Midorima;
+            color: #00260f;
+            text-shadow: 2px 2px 0px #36e378;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .disclaimer{
+            text-align: center;
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-bottom: 50px;
+        }
+
+        .center{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+        }
+
+        .details{
+            box-sizing: border-box;
+        }
+
+        .links{
+            box-sizing: border-box;
+        }
+
+        .box_1{
+            border: 1px solid #00260f;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .box_2{
+            border: 1px solid #00260f;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .box_3{
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .box_3a{
+            border: 5px solid #00260f;
+            background-color: #57d989;
             text-align: left;
+            box-sizing: border-box;
+        }
+
+        .box_4{
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .box_4a{
+            border: 5px solid #00260f;
+            background-color: #57d989;
+            text-align: left;
+            box-sizing: border-box;
+        }
+
+        .info_1 {
+            text-align: left;
+            font-size: 20px;
+            max-width: 400px;
+            
+        }
+
+        .info_2{
+            text-align: left;
+            font-size: 20px;
+            max-width: 400px;
+            
+        }
+
+        .info_3{
+            text-align: left;
+            vertical-align: top;
+            font-size: 20px;
+            max-width: 400px;
+            max-height: 300px;
+            
+        }
+
+        .info_4{
+            text-align: left;
+            vertical-align: top;
+            font-size: 20px;
+            max-width: 400px;
+            max-height: 300px;
+            
+        }
+
+        .icon{
+            border: 3px solid #00260f;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin-top: 3%;
+            margin-left: 3%;
+            margin-bottom: 3%;
+        }
+
+        .icon_text{
+            display: inline-block;
+            vertical-align: center;
+
+        }
+
+        .text{
+            color: #bfffd8;
+            /*margin-left: 20px;*/
             /*line-height: 1.5;
             /*margin-left: 40px;*/
         }
@@ -71,35 +185,194 @@
             margin-bottom: 10px;
         }
 
+        @media screen and (min-width: 801px) {
+            .tit_text{
+                font-size: 80px;
+            }
+
+            .details{
+                margin-top: 3%;
+                margin-left: auto;
+                margin-right: auto;
+                width: 900px;
+            }
+
+            .links{
+                margin-top: 3%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 2%;
+                width: 900px;
+            }
+
+            .box_1{
+                display: inline-block;
+                vertical-align: top;
+                width: 400px; /*450px*/
+                margin-left: auto;
+                margin-right: 10.57%;
+            }
+
+            .box_2{
+                display: inline-block;
+                vertical-align: top;
+                width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .box_3{
+                display: inline-block;
+                vertical-align: bottom;
+                width: 350px;
+                margin-left: auto;
+                margin-right: 21.75%;
+            }
+
+            .box_3a{
+                display: inline-block;
+                vertical-align: bottom;
+                width: 350px;
+            }
+
+            .box_4{
+                display: inline-block;
+                vertical-align: bottom;
+                width: 350px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .box_4a{
+                display: inline-block;
+                vertical-align: bottom;
+                width: 350px;
+            }
+        }
+
+        @media screen and (max-width: 800px) {
+            .tit_text{
+                font-size: 45px;
+            }
+
+            .details{
+                margin-top: 5%;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 900px;
+                max-height: auto;
+            }
+
+            .links{
+                margin-top: 5%;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 900px;
+                max-height: auto;
+
+            }
+
+            .box_1{
+                max-width: 400px; /*450px*/
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .box_2{
+                max-width: 400px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
         
 
     </style>
 
-    <script type = "text/javascript" src = "script.js">
-       /*JavaScript section will allow:
-        -the extension of the to do list box
-        -the addition of different tasks through user input
-        -checkbox buttons by every task
-        -strikethrough every task once check is filled in checkbox
-        */ 
-    </script>
+    <!-- <script type = "text/javascript">
+        function unblur() {
+            document.getElementById("Comm_Sheet").src = "src/Updated Commission Sheet 2022.png"
 
-    <body>
+        }
+
+    </script> -->
+
+    <body width = "device-width">
         <div class = "box">
-            <div class = "list-name"><p><b>My To Do List</b></p></div> <div class = "button"><button type = "button" id = "add" onclick = "add_item()">Add Item</button></div>
+            <div class = "title & tit_text">KTRANE'S PAGE</div>
+            <div class = "disclaimer & text"><p><i><b>Disclaimer: The Content On This Page is for Persons of Ages 18 and Older. 
+                If You are not 18 and Older, Leave This Page Immediately. This is Your Warning.</b></i></p></div>
+            <img src = "src/Updated Commission Sheet.png" id = "Comm_Sheet" class = "center & img-fluid" style = "max-width: 84.38%; 
+            object-fit: scale-down; max-height: auto; border: 5px solid #00260f;" onclick = unblur()>
+            <div class = "bg-image"></div>
 
-            <div class = "text">
-                <!--ul-->
-                <ul style = "list-style: none;">
-                    <li id = "item1"><input type = "checkbox" id = "box1" onclick = "play_sound(id)"> Finish HW <input type = "date"> <button type = "button" id = "1" onclick = "delete_item(id)">Delete</button></li>
-                    <br id = "break1">
-                    <li id = "item2"><input type = "checkbox" id = "box2" onclick = "play_sound(id)"> Clean the Bathroom <input type = "date"> <button type = "button" id = "2" onclick = "delete_item(id)">Delete</button></li>
-                    <br id = "break2">
-                    <li id = "item3"><input type = "checkbox" id = "box3" onclick = "play_sound(id)"> Sweep the Stairs <input type = "date"> <button type = "button" id = "3" onclick = "delete_item(id)">Delete</button></li>
-                    <br id = "break3">
-                    <li id = "item4"><input type = "checkbox" id = "box4" onclick = "play_sound(id)"> Water the Flowers <input type = "date"> <button type = "button" id = "4" onclick = "delete_item(id)">Delete</button></li>
-                    <br id = "break4">
-                </ul>
+            <div class = "details">
+                <div class = "box_1"><u class = "text" style = "font-size: 36px; text-align: center; line-height: 2.0;">Details</u><br>
+                    <i class = "text" style = "font-size: 16px; line-height: 2.0;">Prices Below are for 1 or 2 Characters</i><br>
+                    <div class = info_1>
+                        <ul class = "text" style = "max-width: fit-content;">
+                            <li id = "item1">Lineart (Colored/No Color): $15</li>
+                            <li id = "item2">Full Piece (Fully Shaded): $30</li>                    
+                            <li id = "item3">Detailed Background: +$15</li>
+                            <li id = "item4">Additional Character: +$5</li>
+                            <li id = "item5">Half Body and Busts: -50% of Total Price</li>                      
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class = "box_2"><u class = "text" style = "font-size: 36px; text-align: center; line-height: 2.0;">What I Won't Draw</u><br>
+                    <div class = info_2>
+                        <ul class = "text" style = "max-width: fit-content;">
+                            <li id = "item1">NSFW</li>
+                            <li id = "item2">Incest</li>                    
+                            <li id = "item3">Hateful Art</li>
+                            <li id = "item4">Macro</li>
+                            <li id = "item5">Extreme Gore</li>
+                            <li id = "item6">Fetishes</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class = "links">
+                <div class = "box_3">
+                    <u class = "text & label_1" style = "font-size: 36px; text-align: center; line-height: 2.0;">Link's To My Content</u>
+                    <div class = "box_3a">
+                        <div class = "info_3">
+                            <a href = "https://twitter.com/Ktrane9">
+                                <img src = "src/twitter_icon.png" class = "icon" style = "object-fit: scale-down;"></a>
+                            <div class = "icon_text"><a href = "https://twitter.com/Ktrane9">Twitter</a></div><br>
+
+                            <a href = "https://twitter.com/Ktrane9">
+                                <img src = "src/patreon_icon.png" class = "icon" style = "object-fit: scale-down;"></a>
+                            <div class = "icon_text"><a href = "https://twitter.com/Ktrane9">Patreon</a></div><br>
+
+                            <a href = "https://twitter.com/Ktrane9">
+                                <img src = "src/drive_icon.png" class = "icon" style = "object-fit: scale-down;"></a>
+                            <div class = "icon_text"><a href = "https://twitter.com/Ktrane9">Gallery</a></div><br>
+                        </div>
+                    </div>
+                </div>
+
+                <div class = "box_4">
+                    <u class = "text & label_2" style = "font-size: 36px; text-align: center; line-height: 2.0;">Sites of Interest</u>
+                    <div class = "box_4a">
+                        <div class = "info_4">
+                            <a href = "https://twitter.com/Ktrane9">
+                                <img src = "src/itch.io_icon.png" class = "icon" style = "object-fit: scale-down;"></a>
+                            <div class = "icon_text"><a href = "https://twitter.com/Ktrane9">Itch.io (WIP)</a></div><br>
+
+                            <a href = "https://twitter.com/Ktrane9">
+                                <img src = "src/kofi_icon.png" class = "icon" style = "object-fit: scale-down;"></a>
+                            <div class = "icon_text"><a href = "https://twitter.com/Ktrane9">Ko-fi (Coming Soon!)</a></div><br>
+
+                            <a href = "https://twitter.com/Ktrane9">
+                                <img src = "src/piczel_icon.png" class = "icon" style = "object-fit: scale-down;"></a>
+                            <div class = "icon_text"><a href = "https://twitter.com/Ktrane9">Piczel.tv (WIP)</a></div><br>
+                        </div>
+                    </div>
+                </div>
             </div>
 
             
