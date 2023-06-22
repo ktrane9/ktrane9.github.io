@@ -1,0 +1,82 @@
+body{
+    background: #aaaaaa;
+}
+
+.text{
+    font-size: 22px;
+}
+
+.b_box{
+    position: sticky;
+    top: 0px;
+    width: 150px;
+    height: 50px;
+    padding: 5px;
+    border-radius: 9px;
+    box-sizing: border-box;
+    margin-left: 40px;
+    margin-top: 30px;
+    font-size: 25px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #000000;
+    display: inline-block;
+    transition: transform .2s;
+}
+
+.b_box:hover{
+    transform: scale(1.25);
+}
+
+.box{
+    width: 1100px;
+    height: 450px;
+    max-height: auto;
+    padding: 15px;
+    border: 5px solid #000000;
+    border-radius: 9px;
+    box-sizing: border-box;
+    margin-top: 90px;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 75px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 0px #000000;
+    background-color: #eeeeee00;
+}
+
+.logo{
+    position: sticky;
+    top: 25px;
+    left: 1305px;
+    margin-left: auto;
+    object-fit: scale-down; 
+    max-width: 150px; 
+    max-height: 65px;
+}
+
+.links{
+    width: 200px;
+    max-width: 300px;
+    height: 50px;
+    margin-top: 70px;
+    /* margin-left: 595px; */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.link_img{
+    max-height: 50px;
+    max-width: 50px;
+    display: inline-block;
+    margin-left: 40px;
+    margin-right: auto;
+    object-fit: scale-down;
+    transition: transform .2s;
+}
+
+.link_img:hover{
+    transform: scale(1.5);
+}
