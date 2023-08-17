@@ -6,6 +6,10 @@ body{
     font-size: 22px;
 }
 
+.ul{
+    font-size: 22px;
+}
+
 .b_box{
     position: sticky;
     top: 0px;
@@ -36,7 +40,7 @@ body{
     border: 5px solid #000000;
     border-radius: 9px;
     box-sizing: border-box;
-    margin-top: 90px;
+    margin-top: 70px;
     margin-bottom: auto;
     margin-left: auto;
     margin-right: auto;
@@ -45,6 +49,30 @@ body{
     color: #ffffff;
     text-shadow: 2px 0px #000000;
     background-color: #eeeeee00;
+}
+
+.visit_box{
+    width: 300px;
+    height: 80px;
+    padding: 5px;
+    max-height: auto;
+    border: 5px solid #000000;
+    border-radius: 9px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 40px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 0px #000000;
+    background-color: #eeeeee00;
+    transition: transform .2s;
+}
+
+.visit_box:hover{
+    transform: scale(1.25);
 }
 
 .logo{
@@ -58,6 +86,9 @@ body{
 }
 
 .links{
+    position: absolute;
+    bottom: 50px;
+    left: 635px;
     width: 200px;
     max-width: 300px;
     height: 50px;
@@ -79,4 +110,28 @@ body{
 
 .link_img:hover{
     transform: scale(1.5);
+}
+
+.todo{
+    width: 900px;
+    height: 350px;
+    max-height: auto;
+    padding: 15px;
+    border: 5px solid #000000;
+    border-radius: 9px;
+    box-sizing: border-box;
+    margin-top: 70px;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 75px;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 0px #000000;
+    background-image: url("src/To-Do List Thumbnail(Alpha).png");
+    /* background-blend-mode: luminosity;
+    background-color: #ffffff88; */
+    background-position: top;
+    background-size: 1100px;
+    
 }
