@@ -2,6 +2,10 @@ body{
     background: #aaaaaa;
 }
 
+a:link{
+    text-decoration: none;
+}
+
 .text{
     font-size: 22px;
 }
