@@ -28,8 +28,10 @@ var bingo = function(bingoList, size) {
 	Math.seedrandom(SEED); //sets up the RNG
 	var MAX_SEED = 999999; //1 million cards
 	var results = $("#results");
-	results.append ("<p>SRT Bingo <strong>v1</strong>&emsp;Seed: <strong>" + 
-	SEED + "</strong>&emsp;Card type: <strong>" + cardtype + "</strong></p>");
+	results.append ("<p>&emsp;Card: <strong>" + 
+		SEED + "</strong></p>");
+	// results.append ("<p>SRT Bingo <strong>v1</strong>&emsp;Seed: <strong>" + 
+	// SEED + "</strong>&emsp;Card type: <strong>" + cardtype + "</strong></p>");
 
 	var noTypeCount = 0;
 
@@ -67,20 +69,22 @@ var bingo = function(bingoList, size) {
 		lineCheckList[25] = [0,6,12,18,20,21,22,23,19,14,9,4];
 	}
 
-	$('.popout').click(function() {
-		var mode = null;
-		var line = $(this).attr('id');
-		var name = $(this).html();
-		var items = [];
-		var cells = $('#bingo .'+ line);
-		for (var i = 0; i < 5; i++) {
-		  items.push( encodeURIComponent($(cells[i]).html()) );
-		}
-		if (mode == 'simple-stream') {
-		  window.open('/bingo/bingo-popout-basic.html#'+ name +'='+ items.join(';;;'),"_blank","toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=420, height=180"); }
-		else {
-		  window.open('/bingo/bingo-popout.html#'+ name +'='+ items.join(';;;'),"_blank","toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=220, height=460"); }
-	});
+	//Causes a smaller Window to Appear
+
+	// $('.popout').click(function() {
+	// 	var mode = null;
+	// 	var line = $(this).attr('id');
+	// 	var name = $(this).html();
+	// 	var items = [];
+	// 	var cells = $('#bingo .'+ line);
+	// 	for (var i = 0; i < 5; i++) {
+	// 	  items.push( encodeURIComponent($(cells[i]).html()) );
+	// 	}
+	// 	if (mode == 'simple-stream') {
+	// 	  window.open('/bingo/bingo-popout-basic.html#'+ name +'='+ items.join(';;;'),"_blank","toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=420, height=180"); }
+	// 	else {
+	// 	  window.open('/bingo/bingo-popout.html#'+ name +'='+ items.join(';;;'),"_blank","toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=220, height=460"); }
+	// });
 
 	$("#bingo tr td:not(.popout), #selected td").toggle(
 		function () { $(this).addClass("greensquare"); },
@@ -102,6 +106,88 @@ var bingo = function(bingoList, size) {
 
 	$("#tlbr").hover(function() { $(".tlbr").addClass("hover"); }, function() {	$(".tlbr").removeClass("hover"); });
 	$("#bltr").hover(function() { $(".bltr").addClass("hover"); }, function() {	$(".bltr").removeClass("hover"); });
+
+
+	//-- Row win validation. Colors all 5 tiles in a win color if it finds 5 connected ones --//
+
+	// $("#resetCard").on('click', (function (event) {
+	// 	$(".greensquare").removeClass("greensquare")
+	// 	$(".winsquare").removeClass("winsquare")
+	// }))
+
+	$(".popout").on('click', (function () {
+		const lineChart = ['.row1', '.row2', '.row3', '.row4', '.row5', '.col1', '.col2', '.col3', '.col4', '.col5', '.tlbr', '.bltr']
+		const line = '.' + $(this).attr("id");
+		console.log(line);
+		if ($(line).hasClass('redsquare')) {
+			$(line).removeClass('redsquare')
+			$(line).removeClass('greensquare')
+			$(line).removeClass('winsquare')
+		}
+		else if ($(line).hasClass('greensquare') && $(line).hasClass('winsquare')) {
+			$(line).removeClass('winsquare')
+			$(line).removeClass('greensquare')
+			$(line).addClass('redsquare')
+		}
+		else if ($(line).hasClass('greensquare')) {
+			$(line).addClass('greensquare')
+		}
+		else if(!($(line).hasClass('greensquare')) && !($(line).hasClass('redsquare')) && !($(line).hasClass('winsquare'))){
+			$(line).addClass('greensquare')
+			$(line).addClass('winsquare')
+		}
+		lineChart.forEach(check => {
+			const winCheck = check += "[class~='winsquare'][class~='greensquare']"
+			if ($(winCheck).length === 4) {
+				$(winCheck).removeClass('winsquare')
+				$(winCheck).removeClass('greensquare')
+				$(winCheck).addClass('redsquare')
+			}
+		})
+		lineChart.forEach(check => {
+			const query = check += "[class~='greensquare']"
+			if ($(query).length === 5) {
+				$(query).addClass('winsquare')
+			}
+		})
+
+	}));
+
+	$("#bingo tr td:not(.popout, .ignore)").on('click', (function () {
+		const lineChart = ['.row1', '.row2', '.row3', '.row4', '.row5', '.col1', '.col2', '.col3', '.col4', '.col5', '.tlbr', '.bltr']
+
+		if (!($(this).hasClass('winsquare')) && !($(this).hasClass('greensquare')) && !($(this).hasClass('redsquare'))) {
+			$(this).toggleClass('greensquare')
+		}
+		else if ($(this).hasClass('winsquare')) {
+			$(this).toggleClass('winsquare')
+			$(this).toggleClass('greensquare')
+			$(this).toggleClass('redsquare')
+		}
+		else if ($(this).hasClass('greensquare')) {
+			$(this).toggleClass("greensquare");
+			$(this).toggleClass("redsquare");
+		}
+		else if ($(this).hasClass('redsquare')) {
+			$(this).toggleClass("redsquare");
+		}
+		lineChart.forEach(check => {
+			const winCheck = check += "[class~='winsquare']"
+			if ($(winCheck).length === 4) {
+				$(winCheck).removeClass('winsquare')
+			}
+		})
+		lineChart.forEach(check => {
+			const query = check += "[class~='greensquare']"
+			if ($(query).length === 5) {
+				$(query).addClass('winsquare')
+			}
+		})
+	}));
+
+	//-- End of Win Validation --//
+
+
 
 	function mirror(i) {
 		if      (i == 0) { i = 4; }
@@ -162,6 +248,8 @@ var bingo = function(bingoList, size) {
 
 		// Table5 controls the 5* part and Table1 controls the 1* part.
 		value = 5*e5 + e1;
+
+		// Only Normal Boards for Bebo VC
 
 		if (MODE == "short") { value = Math.floor(value/2); } // if short mode, limit difficulty
 			else if (MODE == "long") { value = Math.floor((value + 25) / 2); }
@@ -234,6 +322,8 @@ function reseedPage(mode) {
 	window.location = qSeed + qMode;
 	return false;
 }
+
+// $('#FreeSpace').attr('src',"C:/Users/Kohl/Documents/GitHub/Akachi-VC-Bingo/images/Kay_Live_2D_Model_V-Neck.png");
 
 // Backwards Compatability 
 var srl = { bingo:bingo };
