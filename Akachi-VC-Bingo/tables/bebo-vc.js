@@ -24,7 +24,7 @@ bingoList[3] = [
     { name: "Milky scolds her dogs", types: ["Milky"] },
     { name: "Dor starts a sentence by saying \"Listen\"", types: ["Dor"] },
     { name: "\"Big. Round. Wide.\"", types: ["E 4 Everyone"] },
-    { name: "Vector says \"You can't say that\"", types: ["Vector"] },
+    { name: "Vector says \"You can't say that!\"", types: ["Vector"] },
     { name: "\"I'm gonna kill myself!\"", types: ["E 4 Everyone"] },
     { name: "PERIOD.", types: ["JD","Milky"] },
     { name: "\"haiii...\" (Sonic joined)", types: ["Sonic"] },
@@ -77,7 +77,7 @@ bingoList[8] = [
     { name: "Parroting Occurs", types: ["Sonic"] },
     { name: "\"Mandé\"", types: ["Milky"] },
     { name: "Chas gasp", types: ["Chas"] },
-    { name: "Schmuckernet", types: ["Schmuck","Bebachi","Mario Kart"] },
+    { name: "\"Schmuckernet\"", types: ["Schmuck","Bebachi","Mario Kart"] },
     { name: "\"I dEid\"", types: ["Schmuck"] }
 ];
 bingoList[9] = [
@@ -86,7 +86,7 @@ bingoList[9] = [
     { name: "B joins VC", types: ["B"] },
     { name: "More than 4 streams going on at once", types: ["E 4 Everyone"] },
     { name: "The Zeke x Sonic 1v1 Nobody asked for", types: ["Zeke","Sonic"] }, 
-    { name: "Zeke being aggressive", types: ["Zeke"] },
+    { name: "Zeke being aggressive/Gets close to the Mic", types: ["Zeke"] },
     { name: "Zeke spiels about game factoids", types: ["Zeke"] },
     { name: "\"Biracial\"", types: ["Bebachi","JD"] }
 ];
@@ -112,7 +112,7 @@ bingoList[11] = [
 bingoList[12] = [
     { name: "Ktrane gets mad", types: ["Ktrane"] },
     { name: "ICE SPICE MENTIONED", types: ["E 4 Everyone"] }, //can be replaced "Pop culture idol ref"
-    { name: "\"MOVE POPPY\"", types: ["Bebachi"] },
+    { name: "\"MOOVE POPPY!!\"", types: ["Bebachi"] },
     { name: "Someone was muted for 20+ minutes thinking they were part of the conversation but wasn't", types: ["Ktrane","Schmuck","Max"] },
     { name: "IJBOL", types: ["JD","Milky"] },
     { name: "Chas is horny for Ktrane", types: ["Chas", "Ktrane"] },
@@ -122,16 +122,16 @@ bingoList[13] = [
     { name: "Everyone being toxic for no reason", types: ["E 4 Everyone"] },
     { name: "A REALLY good impersonation of someone occurs", types: ["E 4 Everyone"] },
     { name: "Max horse gif", types: ["Max"] },
-    { name: "Milky youtube dinner combo", types: ["Milky"] },
+    { name: "Milky youtube + dinner combo", types: ["Milky"] },
     { name: "Bebachi talking about how Zeke is bagging in MK", types: ["Bebachi","Zeke","Mario Kart"] },
     { name: "Drake", types: ["E 4 Everyone"] }, //can be replced "Pop culture idol ref"
     { name: "Milky says \"I fucking hate you!\"", types: ["Milky"] }
 ];
 bingoList[14] = [
-    { name: "Ktrane' TV in the back", types: ["Ktrane"] },
+    { name: "Ktrane's TV in the back", types: ["Ktrane"] },
     { name: "Philo being pregnant", types: ["Philo"] },
     { name: "Dor rping with Max/Kippmin", types: ["Dor","Max","Kippmin"] },
-    { name: "JD disconnect someone", types: ["JD","Kippmin"] },
+    { name: "JD disconnects someone", types: ["JD","Kippmin"] },
     { name: "Milky/JD hating on Daisy", types: ["JD","Sonic","Milky"] },
     { name: "Ktrane playing a Ktrane game", types: ["Ktrane"] }, //can be replaced
     { name: "Zeke plays Splatoon", types: ["Zeke"] }
@@ -156,11 +156,11 @@ bingoList[16] = [
 ];
 bingoList[17] = [
     { name: "Game gets pinged but only 2 people join", types: ["E 4 Everyone", "Jackbox", "Mario Kart"] },
-    { name: "Pokemon Discussion (Milky Checks Out)", types: ["Schmuck","Zeke","Vector","Dor","Ktrane","Milky"] },
+    { name: "Pokemon Discussion (Milky Checks Out)", types: ["Schmuck","Zeke","Vector","Dor","Ktrane","Milky","Nyan"] },
     { name: "Chas asking anyone if they've listened to a certain album", types: ["Chas","JD","Schmuck","Bebachi"] },
     { name: "Unnecessary race discussion/politics", types: ["E 4 Everyone"] },
     { name: "\"Well...\"", types: ["Milky"] },
-    { name: "Anyone getting mad at videogame and leaves", types: ["Ktrane","Milky","Jackbox","Mario Kart"] },
+    { name: "Anyone getting mad at videogame and leaves", types: ["Ktrane","Milky","Bebachi","Jackbox","Mario Kart"] },
     { name: "Chat is a 50/50 split", types: ["E 4 Everyone"] } //can be replaced
 ];
 bingoList[18] = [
@@ -186,7 +186,7 @@ bingoList[20] = [
     { name: "Kippmin picks Baby Park (Everyone Overreacts)", types: ["Kippmin","Mario Kart","E 4 Everyone"] },
     { name: "\"That's so Interesting...\"", types: ["JD"] },
     { name: "Bebachi says \"I fucking hate you!\"", types: ["Bebachi"] },
-    { name: "\"Lemme ask the audience\"", types: ["Milky"] },
+    { name: "\"Lemme ask the audience...\"", types: ["Milky"] },
     { name: "RPG Discussion", types: ["Vector","Ktrane"] },
     { name: "\"Meow...\"", types: ["Dor"] }
 ];
@@ -207,9 +207,9 @@ bingoList[22] = [
     { name: "\"You were in my way!\" \(Had the tiniest reason to use his item on you\)", types: ["Vector","Mario Kart"] }
 ];
 bingoList[23] = [
-    { name: "Duolingo mentioned", types: ["Bebachi","Ktrane"] },
+    { name: "Duolingo mentioned", types: ["Bebachi","Ktrane"] }, //can be replaced
     { name: "Ktrane's anger makes everyone laugh", types: ["Ktrane","E 4 Everyone"] },
-    { name: "Ktrane's anger makes everyone scared", types: ["Ktrane","E 4 Everyone"] },
+    { name: "Ktrane's anger makes everyone silent", types: ["Ktrane","E 4 Everyone"] },
     { name: "Someone speaks without thinking", types: ["E 4 Everyone"] },
     { name: "Vector wins multiple Jackbox games in one night", types: ["Jackbox","Vector"] },
     { name: "People are in the VC before 12pm EST", types: ["E 4 Everyone"] }
